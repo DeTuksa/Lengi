@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lengi/global/screen_size.dart';
+import 'package:lengi/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -158,11 +159,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: 20,),
                       Center(
-                        child: Text(
-                          'Create a new account',
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontWeight: FontWeight.w500
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) {
+                                return SignUpScreen();
+                              })
+                            );
+                          },
+                          child: Text(
+                            'Create a new account',
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontWeight: FontWeight.w500
+                            ),
                           ),
                         ),
                       )
